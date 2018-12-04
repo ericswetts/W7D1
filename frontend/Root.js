@@ -1,5 +1,6 @@
 import React from 'react';
-
+import ReactDOM from 'react-dom';
+import App from './components/app';
 class Root extends React.Component {
   constructor (props) {
     super(props);
@@ -7,7 +8,10 @@ class Root extends React.Component {
   
   render () {
     return(
+      <>
       <h1>Todos App</h1>
+      <App/>
+      </>
     );
   }
 }
