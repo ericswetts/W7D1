@@ -18,30 +18,20 @@ const initialState = {
   }
 };
 
-
 const todosReducer = (state = initialState, action) => {
    Object.freeze(state);
   switch (action.type) {
-    case "RECEIVE_TODOS": 
+    case RECEIVE_TODOS: 
       let newTodos = {};
       action.todos.forEach((task) => newTodos[task.id] = task);
       return newTodos;
-    };
-    case "RECEIVE_TODO":
-      return {
-        return Object.assign({}, action.todo, 
-        {   id: action.todo.id,
-            title: action.todo.,
-            body: 'with soap',
-            done: false,
-            type: "ahahaha"
-          
-        })
-      };
+    
+    case RECEIVE_TODO: 
+      const newTodo = {[action.todo.id]:action.todo};
+        return Object.assign({}, state, newTodo) ;
     default: 
       return state;
-    }
-      
+  }  
 };
 
 
