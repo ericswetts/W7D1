@@ -21,20 +21,18 @@ const initialState = {
 const todosReducer = (state = initialState, action) => {
    Object.freeze(state);
   switch (action.type) {
-    case RECEIVE_TODOS: 
+    case RECEIVE_TODOS:
       let newTodos = {};
       action.todos.forEach((task) => newTodos[task.id] = task);
       return newTodos;
-    
-    case RECEIVE_TODO: 
+
+    case RECEIVE_TODO:
       const newTodo = {[action.todo.id]:action.todo};
-        return Object.assign({}, state, newTodo) ;
-    default: 
+        return Object.assign({}, state, newTodo);
+    default:
       return state;
-  }  
+  }
 };
 
 
   export default todosReducer;
-
-
